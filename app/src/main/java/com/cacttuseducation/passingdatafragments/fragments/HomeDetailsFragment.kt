@@ -22,8 +22,16 @@ class HomeDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        getArgumentsFromHome()
+    }
 
+    private fun getArgumentsFromHome() {
+        val bundle = this.arguments
+        val name = bundle?.getString("name")
+        val age = bundle?.getInt("age")
 
+        binding.tvName.text = name
+        binding.tvAge.text = age.toString()
     }
 
 
